@@ -51,7 +51,7 @@ export default modalTemplate({
         this.setError('applicationId');
       }
       if (serverUrl && this.applicationId) {
-        const parsedUrl = serverUrl.match(/^(https:\/\/[^/]+)/);
+        const parsedUrl = serverUrl.match(/^(http[s]?:\/\/.+)/);
         if (!parsedUrl) {
           this.setError('serverUrl');
         } else {

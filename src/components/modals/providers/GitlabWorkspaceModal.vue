@@ -45,7 +45,10 @@ export default modalTemplate({
   },
   methods: {
     resolve() {
-      const projectPath = utils.parseGitlabProjectPath(this.projectUrl);
+      const projectPath = utils.parseGitlabProjectPath(
+        this.projectUrl,
+        this.config.token.serverUrl,
+      );
       if (!projectPath) {
         this.setError('projectUrl');
       } else {
